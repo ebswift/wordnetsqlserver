@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # SharpDevelop 2.1.0.9999
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Browser", "Browser.vbproj", "{559B5478-1713-419F-B140-AB98327FB679}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.TextEditor", "..\ICSharpCode.TextEditor\Project\ICSharpCode.TextEditor.csproj", "{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateAssemblyInfo", "..\src\Tools\UpdateAssemblyInfo\UpdateAssemblyInfo.csproj", "{605C8CDB-F0AD-4A21-9F4A-959B8DECB0F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.TextEditor", "..\src\Libraries\ICSharpCode.TextEditor\Project\ICSharpCode.TextEditor.csproj", "{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
