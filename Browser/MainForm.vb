@@ -39,13 +39,23 @@ Public Partial Class MainForm
 	Sub BtnExecuteClick(sender As Object, e As System.EventArgs)
 		Dim sc As New System.Data.SqlClient.SqlCommand(sqlEditor.Text, sqlconnection1)
 		
-		dataset1.Tables.Clear()
-		sqlDataAdapter1.SelectCommand = sc
-		sqlDataAdapter1.Fill(dataset1)
-		datagridview1.DataSource = dataset1.Tables(0)
-		
-'		MessageBox.Show(dataset1.Tables(0).Rows(0)(1))
-'		datagridview1.DataMember = dataset1.Tables(0).TableName
-		datagridview1.Refresh
+		Try
+			StatusText.Text = "Processing command, please wait."
+			StatusText.Image = ImageList1.Images("wait.jpg")
+			statusStrip1.Refresh
+			
+			dataset1.Tables.Clear()
+			sqlDataAdapter1.SelectCommand = sc
+			sqlDataAdapter1.Fill(dataset1)
+			datagridview1.DataSource = dataset1.Tables(0)
+			
+			datagridview1.Refresh
+			
+			StatusText.Text = "The command completed successfully."
+			StatusText.Image = ImageList1.Images("ok.jpg")
+		Catch ex As Exception
+			StatusText.Text = ex.Message
+			StatusText.Image = ImageList1.Images("warning.jpg")
+		End Try
 	End Sub
 End Class
