@@ -34,9 +34,9 @@ using ICSharpCode.TextEditor;
 using ICSharpCode.TextEditor.Gui.CompletionWindow;
 
 using Dom = ICSharpCode.SharpDevelop.Dom;
-using NRefactoryResolver = ICSharpCode.SharpDevelop.Dom.NRefactoryResolver.NRefactoryResolver;
+/*using NRefactoryResolver = ICSharpCode.SharpDevelop.Dom.NRefactoryResolver.NRefactoryResolver; */
 
-namespace CSharpEditor
+namespace Browser
 {
 	class CodeCompletionProvider : ICompletionDataProvider
 	{
@@ -87,11 +87,24 @@ namespace CSharpEditor
 		public ICompletionData[] GenerateCompletionData(string fileName, TextArea textArea, char charTyped)
 		{
 			// We can return code-completion items like this:
-			
+			string expr = FindExpression(textArea).Expression.ToString();
+            expr = expr.Substring(0, expr.Length - 1).ToLower();
+
+            return (ICompletionData[])MainForm.htWordNet[expr];
+
+            //switch(FindExpression(textArea) {
+            //    case "
+            //}
+            /*
+			return new ICompletionData[] {
+				new DefaultCompletionData("fred", "Description", 1),
+				new DefaultCompletionData("fred", "Description2", 1)
+			};
+*/
 			//return new ICompletionData[] {
 			//	new DefaultCompletionData("Text", "Description", 1)
 			//};
-			
+/*			
 			NRefactoryResolver resolver = new NRefactoryResolver(mainForm.myProjectContent);
 			Dom.ResolveResult rr = resolver.Resolve(FindExpression(textArea),
 			                                        textArea.Caret.Line,
@@ -106,7 +119,8 @@ namespace CSharpEditor
 				}
 			}
 			return resultList.ToArray();
-		}
+*/
+    }
 		
 		/// <summary>
 		/// Find the expression the cursor is at.
