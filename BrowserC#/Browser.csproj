@@ -40,6 +40,7 @@
     <Compile Include="AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="HostCallbackImplementation.cs" />
     <Compile Include="CodeCompletionKeyHandler.cs" />
