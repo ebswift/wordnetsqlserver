@@ -87,8 +87,13 @@ namespace Browser
 		public ICompletionData[] GenerateCompletionData(string fileName, TextArea textArea, char charTyped)
 		{
 			// We can return code-completion items like this:
-			string expr = FindExpression(textArea).Expression.ToString();
-            expr = expr.Substring(0, expr.Length - 1).ToLower();
+			string expr = "";
+            try {
+                expr = FindExpression(textArea).Expression.ToString();
+                expr = expr.Substring(0, expr.Length - 1).ToLower();
+            } catch {
+                // ignore when no expression is found
+            }
 
             return (ICompletionData[])MainForm.htWordNet[expr];
 
@@ -129,8 +134,9 @@ namespace Browser
 		/// </summary>
 		Dom.ExpressionResult FindExpression(TextArea textArea)
 		{
-			Dom.CSharp.CSharpExpressionFinder finder;
-			finder = new Dom.CSharp.CSharpExpressionFinder(MainForm.DummyFileName);
+			//Dom.CSharp.CSharpExpressionFinder finder;
+            Dom.SQL.SQLExpressionFinder finder;
+			finder = new Dom.SQL.SQLExpressionFinder(MainForm.DummyFileName);
 			return finder.FindExpression(textArea.Document.TextContent, textArea.Caret.Offset);
 		}
 		

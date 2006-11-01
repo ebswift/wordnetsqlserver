@@ -86,8 +86,9 @@ ORDER BY synset.pos
 			                                            "CSharpCodeCompletion"));
 			
 			myProjectContent = new Dom.DefaultProjectContent();
-			myProjectContent.Language = Dom.LanguageProperties.CSharp;
+			//myProjectContent.Language = Dom.LanguageProperties.CSharp;
 		
+			myProjectContent.Language = Dom.LanguageProperties.VBNet;
 		
 		}
 
@@ -209,7 +210,8 @@ ORDER BY synset.pos
 			                         }));
 			TextReader textReader = new StringReader(code);
 			Dom.ICompilationUnit newCompilationUnit;
-			using (NRefactory.IParser p = NRefactory.ParserFactory.CreateParser(NRefactory.SupportedLanguage.CSharp, textReader)) {
+//			using (NRefactory.IParser p = NRefactory.ParserFactory.CreateParser(NRefactory.SupportedLanguage.CSharp, textReader)) {
+			using (NRefactory.IParser p = NRefactory.ParserFactory.CreateParser(NRefactory.SupportedLanguage.VBNet, textReader)) {
 				p.Parse();
 				newCompilationUnit = ConvertCompilationUnit(p.CompilationUnit);
 			}
