@@ -127,7 +127,8 @@ ORDER BY synset.pos
 			sqlEditor.Focus();
 			try {
             	buildDataHT();
-			} catch Exception ex {
+			} 
+			catch (Exception ex) {
 				MessageBox.Show(ex.Message + "\nHave you unzipped the database file in the Database folder?");
 			}
 		}
