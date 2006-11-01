@@ -45,6 +45,8 @@
     <Compile Include="HostCallbackImplementation.cs" />
     <Compile Include="CodeCompletionKeyHandler.cs" />
     <Compile Include="CodeCompletionProvider.cs" />
+    <Compile Include="SQLAmbience.cs" />
+    <Compile Include="SQLExpressionFinder.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\src\Libraries\ICSharpCode.TextEditor\Project\ICSharpCode.TextEditor.csproj">
