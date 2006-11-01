@@ -125,7 +125,11 @@ ORDER BY synset.pos
 		void MainFormLoad(object sender, System.EventArgs e)
 		{
 			sqlEditor.Focus();
-            buildDataHT();
+			try {
+            	buildDataHT();
+			} catch Exception ex {
+				MessageBox.Show(ex.Message + "\nHave you unzipped the database file in the Database folder?");
+			}
 		}
 
         // enumerate all tables in our database and build a table/column hashtable for code completion
