@@ -1,0 +1,1 @@
+Unzip the database in order to be able to run the project.

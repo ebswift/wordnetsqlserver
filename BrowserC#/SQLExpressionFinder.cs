@@ -76,7 +76,7 @@ namespace ICSharpCode.SharpDevelop.Dom.SQL
 						IReturnType t = finder.SearchType(nonGenericClassName, typeParameterCount);
 						IClass c = (t != null) ? t.GetUnderlyingClass() : null;
 						if (c != null) {
-							ExpressionContext context = ExpressionContext.TypeDerivingFrom(c, true);
+							ExpressionContext context = ExpressionContext.TypeDerivingFrom(c.BaseType, true);
 							if (context.ShowEntry(c)) {
 								if (genericPart != null) {
 									DefaultClass genericClass = new DefaultClass(c.CompilationUnit, c.ClassType, c.Modifiers, c.Region, c.DeclaringType);
@@ -94,7 +94,7 @@ namespace ICSharpCode.SharpDevelop.Dom.SQL
 			} else {
 				UnGet();
 				if (ReadIdentifier(GetNextNonWhiteSpace()) == "throw") {
-					return ExpressionContext.TypeDerivingFrom(HostCallback.GetCurrentProjectContent().GetClass("System.Exception"), true);
+					return ExpressionContext.TypeDerivingFrom(HostCallback.GetCurrentProjectContent().GetClass("System.Exception", 1).BaseType, true);
 				}
 			}
 			return ExpressionContext.ObjectCreation;

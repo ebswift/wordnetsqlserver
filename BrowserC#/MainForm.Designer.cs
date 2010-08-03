@@ -105,7 +105,7 @@ namespace Browser
 			this.splitContainer2.Panel2.Controls.Add(this.btnExecute);
 			this.splitContainer2.Panel2.Controls.Add(this.sqlEditor);
 			this.splitContainer2.Size = new System.Drawing.Size(799, 266);
-			this.splitContainer2.SplitterDistance = 266;
+			this.splitContainer2.SplitterDistance = 38;
 			this.splitContainer2.TabIndex = 3;
 			// 
 			// btnExecute
@@ -132,7 +132,7 @@ namespace Browser
 			this.sqlEditor.ShowSpaces = true;
 			this.sqlEditor.ShowTabs = true;
 			this.sqlEditor.ShowVRuler = true;
-			this.sqlEditor.Size = new System.Drawing.Size(521, 231);
+			this.sqlEditor.Size = new System.Drawing.Size(749, 231);
 			this.sqlEditor.TabIndex = 0;
 			// 
 			// dataGridView1
