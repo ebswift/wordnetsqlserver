@@ -9,4 +9,4 @@ C# components of this project were created by SharpDevelop, a free and open sour
 
 This project maintained by Troy Simpson, email troy@ebswift.com.
 
-For information and updates, see http://opensource.ebswift.com.
+For information and updates, see http://www.ebswift.com.
